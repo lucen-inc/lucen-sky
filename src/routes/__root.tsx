@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "LucenSky" },
+      { name: "description", content: "Sky Canvas is an atmospheric media platform that transforms the sky into a programmable medium for storytelling and spectacle." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "LucenSky" },
+      { property: "og:description", content: "Sky Canvas is an atmospheric media platform that transforms the sky into a programmable medium for storytelling and spectacle." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "LucenSky" },
+      { name: "twitter:description", content: "Sky Canvas is an atmospheric media platform that transforms the sky into a programmable medium for storytelling and spectacle." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/Aho1PfCYoITTu3qbzSI7zPyEErI2/social-images/social-1780913423225-67adae841908e54db1b311c1_AHS_7167-p-1600.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/Aho1PfCYoITTu3qbzSI7zPyEErI2/social-images/social-1780913423225-67adae841908e54db1b311c1_AHS_7167-p-1600.webp" },
     ],
     links: [
       {
