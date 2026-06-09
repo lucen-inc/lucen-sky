@@ -104,6 +104,7 @@ function IndustriesPage() {
           </Link>
         </div>
       </section>
+      <Footer />
     </main>
   );
 }
