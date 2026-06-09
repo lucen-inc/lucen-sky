@@ -155,6 +155,7 @@ function ExperienceDetail() {
           ))}
         </div>
       </section>
+      <Footer />
     </main>
   );
 }
