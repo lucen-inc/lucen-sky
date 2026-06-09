@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import logoAsset from "@/assets/logo-lucen.png.asset.json";
+import logoAsset from "@/assets/logo-lucen-v2.png.asset.json";
 import mediaA from "@/assets/media-cloud-swarm.jpg.asset.json";
 import mediaB from "@/assets/media-cairo.png.asset.json";
 import mediaC from "@/assets/media-fireworks.jpg.asset.json";

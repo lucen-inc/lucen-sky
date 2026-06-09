@@ -1,4 +1,4 @@
-import logoAsset from "@/assets/logo-lucen.png.asset.json";
+import logoAsset from "@/assets/logo-lucen-v2.png.asset.json";
 import { Link } from "@tanstack/react-router";
 
 export function Nav() {
