@@ -140,6 +140,7 @@ function IndustryPage() {
           ))}
         </div>
       </section>
+      <Footer />
     </main>
   );
 }
