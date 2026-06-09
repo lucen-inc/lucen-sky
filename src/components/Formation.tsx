@@ -36,7 +36,7 @@ export function Formation() {
 
           <div className="lg:col-span-7">
             <div className="glass-strong rounded-3xl p-2 ring-hairline">
-              <div className="rounded-[20px] overflow-hidden relative aspect-[4/3] bg-[color:var(--deep-space)]">
+              <div className="rounded-[20px] overflow-hidden relative h-[80vh] md:h-auto md:aspect-[4/3] bg-[color:var(--deep-space)]">
                 <SwarmCanvas />
                 {/* HUD overlay */}
                 <div className="absolute inset-0 pointer-events-none">
