@@ -18,6 +18,8 @@ export type Shape =
   | { kind: "wheel" }
   | { kind: "house" }
   | { kind: "plane" }
+  | { kind: "starburst"; rays?: number }
+  | { kind: "constellation" }
   | { kind: "text"; text: string; weights?: number[] };
 
 const DEFAULT_SHAPES: Shape[] = [
