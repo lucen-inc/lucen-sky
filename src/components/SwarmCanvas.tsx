@@ -18,6 +18,10 @@ export type Shape =
   | { kind: "wheel" }
   | { kind: "house" }
   | { kind: "plane" }
+  | { kind: "apartment"; floors?: number }
+  | { kind: "sportscar" }
+  | { kind: "dome" }
+  | { kind: "pill" }
   | { kind: "starburst"; rays?: number }
   | { kind: "constellation" }
   | { kind: "text"; text: string; weights?: number[] };
@@ -290,12 +294,86 @@ export function SwarmCanvas({
         }
         case "constellation":
           return sample((_, i) => {
-            // pseudo-random scattered stars with soft clustering
             const a = (i * 2.399) % (Math.PI * 2);
             const rr = Math.sqrt(((i * 53) % 100) / 100) * R * 1.15;
             const jitterX = (((i * 91) % 100) / 100 - 0.5) * R * 0.15;
             const jitterY = (((i * 17) % 100) / 100 - 0.5) * R * 0.15;
             return { x: cx + Math.cos(a) * rr + jitterX, y: cy + Math.sin(a) * rr * 0.8 + jitterY };
+          });
+        case "apartment": {
+          // Tall residential tower with window grid
+          const floors = s.floors ?? 9;
+          const cols = 5;
+          const towerW = R * 1.2, towerH = R * 1.9;
+          const top = cy - towerH / 2;
+          return sample((_, i) => {
+            const phase = i % 4;
+            if (phase === 0) {
+              // outline
+              const u = ((i * 23) % 100) / 100;
+              const side = (i >> 1) % 2 === 0 ? -1 : 1;
+              return { x: cx + side * towerW / 2, y: top + u * towerH };
+            }
+            // windows grid
+            const c = i % cols;
+            const r = Math.floor(i / cols) % floors;
+            return {
+              x: cx - towerW / 2 + (c + 0.5) * (towerW / cols),
+              y: top + (r + 0.5) * (towerH / floors),
+            };
+          });
+        }
+        case "sportscar":
+          return sample((u, i) => {
+            // low-slung silhouette: long body, curved roof, two wheels
+            const phase = i % 5;
+            const bodyL = R * 2.2;
+            if (phase === 0) {
+              // chassis line
+              const x = cx - bodyL / 2 + u * bodyL;
+              return { x, y: cy + R * 0.15 };
+            }
+            if (phase === 1) {
+              // roof arc
+              const x = cx - bodyL * 0.28 + u * bodyL * 0.65;
+              const k = (x - cx) / (bodyL * 0.5);
+              return { x, y: cy - R * 0.35 * Math.cos(k * Math.PI * 0.5) };
+            }
+            if (phase === 2) {
+              // hood/trunk underline
+              const x = cx - bodyL / 2 + u * bodyL;
+              return { x, y: cy + R * 0.05 - Math.exp(-Math.pow((x - cx) / (bodyL * 0.4), 2)) * R * 0.18 };
+            }
+            // wheels
+            const left = i % 2 === 0;
+            const wx = cx + (left ? -bodyL * 0.32 : bodyL * 0.32);
+            const a = u * Math.PI * 2;
+            return { x: wx + Math.cos(a) * R * 0.18, y: cy + R * 0.4 + Math.sin(a) * R * 0.18 };
+          });
+        case "dome":
+          return sample((u, i) => {
+            // half-sphere capitol / institutional dome
+            if (i % 3 === 0) {
+              // base line
+              return { x: cx - R * 1.1 + u * R * 2.2, y: cy + R * 0.4 };
+            }
+            const a = u * Math.PI;
+            return { x: cx + Math.cos(a) * R * 1.05, y: cy + R * 0.4 - Math.sin(a) * R * 1.05 };
+          });
+        case "pill":
+          return sample((u, i) => {
+            // capsule pill horizontal
+            const len = R * 1.6, rad = R * 0.55;
+            const phase = i % 2;
+            if (phase === 0) {
+              // body
+              const x = cx - len / 2 + u * len;
+              const side = (i >> 1) % 2 === 0 ? -1 : 1;
+              return { x, y: cy + side * rad };
+            }
+            const a = u * Math.PI;
+            const side = (i >> 1) % 2 === 0 ? -1 : 1;
+            return { x: cx + side * (len / 2) + side * Math.sin(a) * rad, y: cy - Math.cos(a) * rad };
           });
         case "text":
           return buildText(s.text, s.weights);

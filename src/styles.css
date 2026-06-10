@@ -107,15 +107,19 @@
     -webkit-backdrop-filter: blur(28px) saturate(160%);
   }
   .text-grad {
-    background: linear-gradient(135deg, var(--holographic-white) 0%, oklch(0.86 0.16 220) 60%, oklch(0.66 0.22 290) 100%);
+    background-image: linear-gradient(135deg, var(--holographic-white) 0%, oklch(0.86 0.16 220) 60%, oklch(0.66 0.22 290) 100%);
+    background-color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
+    -webkit-text-fill-color: transparent;
     color: transparent;
   }
   .text-cyan-grad {
-    background: linear-gradient(90deg, oklch(0.86 0.16 220), oklch(0.66 0.22 290));
+    background-image: linear-gradient(90deg, oklch(0.86 0.16 220), oklch(0.66 0.22 290));
+    background-color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
+    -webkit-text-fill-color: transparent;
     color: transparent;
   }
   .glow-cyan { box-shadow: var(--glow-cyan); }
