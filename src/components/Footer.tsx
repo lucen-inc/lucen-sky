@@ -6,18 +6,19 @@ import mediaC from "@/assets/media-fireworks.jpg.asset.json";
 import mediaD from "@/assets/media-johnny-walker.jpg.asset.json";
 import mediaE from "@/assets/media-redbull.png.asset.json";
 import mediaF from "@/assets/media-disney.png.asset.json";
+import { src } from "@/lib/media";
 
 const strip = [mediaA, mediaB, mediaC, mediaD, mediaE, mediaF];
 
 export function Footer() {
   return (
-    <footer className="relative mt-32 border-t border-white/5">
+    <footer className="relative mt-24 md:mt-32 border-t border-white/5">
       {/* media strip */}
       <div className="grid grid-cols-3 md:grid-cols-6 gap-px bg-white/5">
         {strip.map((m, i) => (
-          <div key={i} className="relative aspect-[4/3] overflow-hidden bg-[color:var(--obsidian)] group">
+          <div key={i} className="relative aspect-square md:aspect-[4/3] overflow-hidden bg-[color:var(--obsidian)] group">
             <img
-              src={m.url}
+              src={src(m)}
               alt=""
               loading="lazy"
               className="absolute inset-0 h-full w-full object-cover opacity-60 group-hover:opacity-90 group-hover:scale-110 transition-all duration-[1400ms]"
@@ -29,10 +30,10 @@ export function Footer() {
 
       <div className="relative">
         <div className="absolute inset-0 grid-lines opacity-10 pointer-events-none" />
-        <div className="relative mx-auto max-w-7xl px-6 py-16 grid md:grid-cols-12 gap-10">
+        <div className="relative mx-auto max-w-7xl px-5 md:px-6 py-12 md:py-16 grid md:grid-cols-12 gap-8 md:gap-10">
           <div className="md:col-span-5">
             <Link to="/" className="flex items-center gap-3">
-              <img src={logoAsset.url} alt="Lucen Sky" className="h-6 w-auto invert opacity-90" />
+              <img src={src(logoAsset)} alt="Lucen Sky" className="h-6 w-auto invert opacity-90" />
             </Link>
             <p className="mt-5 text-sm text-muted-foreground leading-relaxed max-w-sm">
               An operating system for autonomous, coordinated drone systems —
@@ -56,12 +57,11 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-2">
-            <div className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-4">Capabilities</div>
+            <div className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-4">Contact</div>
             <ul className="space-y-2.5 text-sm text-muted-foreground">
-              <li>Autonomous swarms</li>
-              <li>Manual light shows</li>
-              <li>Hybrid pyro · swarm</li>
-              <li>Sky-OS telemetry</li>
+              <li><a href="tel:+25472775007" className="hover:text-foreground font-mono text-[12px]">+254 7-2775-007</a><div className="text-[9px] tracking-[0.2em] uppercase">Studio</div></li>
+              <li><a href="tel:+25420202345678" className="hover:text-foreground font-mono text-[12px]">+254 2-0202-345-678</a><div className="text-[9px] tracking-[0.2em] uppercase">Flight Ops · 24/7</div></li>
+              <li><a href="mailto:hello@sky.lucene.co" className="hover:text-foreground">hello@sky.lucene.co</a></li>
             </ul>
           </div>
 
@@ -79,9 +79,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-6 pb-10 flex flex-wrap items-center justify-between gap-4 text-[10px] font-mono tracking-[0.25em] uppercase text-muted-foreground/60">
+        <div className="relative mx-auto max-w-7xl px-5 md:px-6 pb-10 flex flex-wrap items-center justify-between gap-3 md:gap-4 text-[9px] md:text-[10px] font-mono tracking-[0.25em] uppercase text-muted-foreground/60">
           <span>© Lucen Sky · Atmospheric Media Platform</span>
-          <span>LAT 25.276 · LON 55.296 · ALT 120m</span>
+          <span className="hidden md:inline">LAT 25.276 · LON 55.296 · ALT 120m</span>
           <span>v1.0 · Operational</span>
         </div>
       </div>
