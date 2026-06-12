@@ -42,7 +42,10 @@ export const industries: Industry[] = [
       "We translate brand silhouettes, monograms, and product reveals into atmospheric choreographies that pull foot traffic toward the flagship.",
       "Measurement is built in: dwell, heat-maps, and conversion uplift in the 48 hours following the show.",
     ],
-    shapes: [{ kind: "text", text: "LUX" }, { kind: "starburst", rays: 16 }, { kind: "heart" }],
+    shapes: [{ kind: "text", text: "LUX" }, { kind: "starburst", rays: 24 }, { kind: "heart" }],
+    secondsPerKey: 11,
+    particles: 820,
+
     metrics: [
       { k: "Dwell Uplift", v: "+38%" },
       { k: "Footfall Spike", v: "4.2×" },
@@ -78,7 +81,10 @@ export const industries: Industry[] = [
       "We map architectural elevations into formations that hover precisely above the site, giving prospects an aerial preview before a single foundation is poured.",
       "Sales centres report dramatic compression in the sales cycle when the sky becomes the brochure.",
     ],
-    shapes: [{ kind: "apartment", floors: 9 }, { kind: "skyline" }, { kind: "house" }],
+    shapes: [{ kind: "apartment", floors: 12 }, { kind: "skyline" }, { kind: "house" }],
+    secondsPerKey: 13,
+    particles: 880,
+
     metrics: [
       { k: "Time to Deposit", v: "−41%" },
       { k: "Launch Coverage", v: "92 outlets" },
@@ -115,6 +121,9 @@ export const industries: Industry[] = [
       "The sky show becomes the lead asset for the next twelve months of campaign creative.",
     ],
     shapes: [{ kind: "sportscar" }, { kind: "wheel" }, { kind: "text", text: "DRIVE" }],
+    secondsPerKey: 10,
+    particles: 900,
+
     metrics: [
       { k: "Test-Drive Bookings", v: "+57%" },
       { k: "Reveal Recall", v: "89%" },
@@ -150,7 +159,10 @@ export const industries: Industry[] = [
       "We render crests, mottos, and constellations of alumni achievement above the campus.",
       "The result is the most photographed evening of the academic year and a measurable lift in applications.",
     ],
-    shapes: [{ kind: "constellation" }, { kind: "columns", n: 5 }, { kind: "text", text: "LEARN" }],
+    shapes: [{ kind: "constellation" }, { kind: "columns", n: 6 }, { kind: "text", text: "LEARN" }],
+    secondsPerKey: 12,
+    particles: 760,
+
     metrics: [
       { k: "Open-Day Capture", v: "+44%" },
       { k: "Application Lift", v: "+18%" },
@@ -186,7 +198,10 @@ export const industries: Industry[] = [
       "Mesh nodes pulse, signal waves expand outward, latency drops in real time above a stadium full of customers.",
       "The atmospheric demonstration becomes a single shareable proof of network superiority.",
     ],
-    shapes: [{ kind: "antenna" }, { kind: "wave" }, { kind: "starburst", rays: 10 }],
+    shapes: [{ kind: "antenna" }, { kind: "wave" }, { kind: "starburst", rays: 14 }],
+    secondsPerKey: 9,
+    particles: 940,
+
     metrics: [
       { k: "Upgrade Intent", v: "+33%" },
       { k: "Brand Trust", v: "+27pt" },
@@ -222,7 +237,10 @@ export const industries: Industry[] = [
       "Architectural columns of light, stable formations holding for minutes, monumental wordmarks: the choreography itself communicates institutional permanence.",
       "We pair atmospheric shows with branch open-days to translate spectacle into appointments.",
     ],
-    shapes: [{ kind: "dome" }, { kind: "columns", n: 7 }, { kind: "text", text: "TRUST" }],
+    shapes: [{ kind: "dome" }, { kind: "columns", n: 9 }, { kind: "text", text: "TRUST" }],
+    secondsPerKey: 14,
+    particles: 720,
+
     metrics: [
       { k: "Consideration Lift", v: "+29%" },
       { k: "Branch Appointments", v: "+34%" },
@@ -258,7 +276,10 @@ export const industries: Industry[] = [
       "We turn departure halls, rooftop plazas, and outdoor courts into recurring media venues for the brands inside.",
       "Revenue-share programs let operators monetise every flight delay and every weekend evening.",
     ],
-    shapes: [{ kind: "plane" }, { kind: "arc" }, { kind: "grid" }],
+    shapes: [{ kind: "plane" }, { kind: "arc" }, { kind: "grid", aspect: 2.2 }],
+    secondsPerKey: 11,
+    particles: 860,
+
     metrics: [
       { k: "Dwell ROI", v: "8.2×" },
       { k: "Tenant Renewals", v: "+22%" },
@@ -295,6 +316,9 @@ export const industries: Industry[] = [
       "It is the most human use of the medium and the one that surprises us most.",
     ],
     shapes: [{ kind: "plus" }, { kind: "heartbeat" }, { kind: "pill" }],
+    secondsPerKey: 10,
+    particles: 800,
+
     metrics: [
       { k: "Training Retention", v: "+24%" },
       { k: "Public Engagement", v: "3.6× baseline" },
