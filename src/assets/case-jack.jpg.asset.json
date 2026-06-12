@@ -2,10 +2,13 @@
   "version": 1,
   "asset_id": "c9d9fbfe-7232-4a04-93eb-5cb518e1e5dd",
   "project_id": "800c81fc-a89e-4f7d-8e76-1ad29f36b841",
-  "url": "/__l5e/assets-v1/c9d9fbfe-7232-4a04-93eb-5cb518e1e5dd/case-jack.jpg",
+  "url": "https://veipkvxrabpzsnpupjyr.supabase.co/storage/v1/object/sign/lucen-sky-media/assets/c9d9fbfe-7232-4a04-93eb-5cb518e1e5dd/case-jack.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8wMzUxNjQ0Yy1kMGMyLTQ1ZjYtODE0ZS0xMDIwMTc1ZTU1YzkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJsdWNlbi1za3ktbWVkaWEvYXNzZXRzL2M5ZDlmYmZlLTcyMzItNGEwNC05M2ViLTVjYjUxOGUxZTVkZC9jYXNlLWphY2suanBnIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4MTI1NjIwNCwiZXhwIjoyMDk2NjE2MjA0fQ.JJg_sfz6lqV0s8FaQrfK3I7OSdOV4Rlt2BKrABD0P0Y",
   "r2_key": "a/v1/800c81fc-a89e-4f7d-8e76-1ad29f36b841/c9d9fbfe-7232-4a04-93eb-5cb518e1e5dd/case-jack.jpg",
   "original_filename": "case-jack.jpg",
   "size": 129837,
   "content_type": "image/jpeg",
-  "created_at": "2026-06-07T16:16:42Z"
+  "created_at": "2026-06-07T16:16:42Z",
+  "storage_bucket": "lucen-sky-media",
+  "storage_path": "assets/c9d9fbfe-7232-4a04-93eb-5cb518e1e5dd/case-jack.jpg",
+  "migrated_at": "2026-06-12T09:23:24.123Z"
 }
