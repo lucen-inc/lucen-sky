@@ -17,10 +17,10 @@ function AuthPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [info, setInfo] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // If already signed in, push to admin
     supabase.auth.getUser().then(({ data }) => {
       if (data.user) navigate({ to: "/admin" });
     });
@@ -29,20 +29,30 @@ function AuthPage() {
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
+    setInfo(null);
     setLoading(true);
     try {
       if (mode === "signin") {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
+        navigate({ to: "/admin" });
       } else {
-        const { error } = await supabase.auth.signUp({
+        const { data, error } = await supabase.auth.signUp({
           email,
           password,
           options: { emailRedirectTo: `${window.location.origin}/admin` },
         });
         if (error) throw error;
+        if (data.session) {
+          navigate({ to: "/admin" });
+        } else {
+          setInfo(
+            `Clearance pending — we've dispatched a confirmation flight plan to ${email}. Open it to complete pre-flight checks, then return here to sign in.`,
+          );
+          setMode("signin");
+          setPassword("");
+        }
       }
-      navigate({ to: "/admin" });
     } catch (err: any) {
       setError(err.message ?? "Sign-in failed");
     } finally {
